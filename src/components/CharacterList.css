@@ -1,0 +1,58 @@
+#pc-list {
+    width: 40%;
+    margin: auto;
+}
+
+.list-item {
+    margin: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.item {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.pc-name {
+    font-size: 2rem;
+}
+
+.pc-props {
+    font-size: 1.25rem;
+    color: gray;
+}
+
+.pointer {
+    font-size: 3rem;
+    visibility: hidden;
+}
+
+.list-item:hover .pointer {
+    visibility: visible;
+}
+
+.list-item:hover>* {
+    color: #eb4034;
+
+}
+
+.list-item:hover .pc-props {
+    color: #d4675f;
+
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+#create-character-button-container {
+    width: 50%;
+}
