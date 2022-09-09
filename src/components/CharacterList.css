@@ -1,6 +1,8 @@
 #pc-list {
     width: 40%;
     margin: auto;
+    background-color: rgba(255, 255, 255, 20%);
+    border-radius: 20px;
 }
 
 .list-item {
@@ -26,7 +28,7 @@
 
 .pc-props {
     font-size: 1.25rem;
-    color: gray;
+    color: rgb(128, 128, 128);
 }
 
 .pointer {
@@ -45,7 +47,6 @@
 
 .list-item:hover .pc-props {
     color: #d4675f;
-
 }
 
 a {
@@ -55,4 +56,17 @@ a {
 
 #create-character-button-container {
     width: 50%;
+}
+
+#character-level-button {
+    background-color: rgba(255, 255, 255, 80%);
+    padding: 5px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#character-level-button:hover {
+    background-color: rgba(255, 255, 255, 100%);
+
 }

@@ -2,6 +2,8 @@ import { type } from "os";
 import React, { useEffect, useState } from "react";
 import CharacterList from '../components/CharacterList';
 import { classesDummyData } from '../DummyData';
+import './Home.css';
+
 const axios = require('axios');
 
 interface characterParam {
@@ -73,11 +75,15 @@ const Home = () => {
             {/* renders out a class filter */}
             {classesDummyData.map(item =>
                 selectedClassFilter.includes(item.name) ?
-                    <div className="class-select" id="class-select-active" onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>{item.name}</div>
-                    : <div className='class-select' onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>{item.name}</div>)}
+                    <div className="class-select" id="class-select-active" onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>
+                        <span className="class-select-text">{item.name}s</span>
+                    </div>
+                    : <div className='class-select' onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>
+                        <span className="class-select-text">{item.name}s</span>
+                    </div>)}
         </div>
         {/* renders out a level filter */}
-        <div id="character-level-filter">
+        <div id="character-level-filters">
             <label>
                 Min Level:
                 <input id="character-level-filter-min" placeholder="1" value={selectedLevelFilter[0]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
@@ -87,7 +93,7 @@ const Home = () => {
                 Max Level:
                 <input id="character-level-filter-max" placeholder="20" value={selectedLevelFilter[1]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
             </label>
-            <button id="character-level-button" onClick={handleLevelSubmit}>Filter</button>
+            <button id="character-level-button" onClick={handleLevelSubmit}>Show</button>
         </div>
 
         <h1>SELECT A CHARACTER:</h1>

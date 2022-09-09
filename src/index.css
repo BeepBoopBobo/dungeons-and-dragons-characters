@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+html {
+  margin: 0;
+  /* background: rgb(255, 149, 149); */
+  background: linear-gradient(180deg, rgb(253, 95, 95) 0%, rgb(255, 225, 225) 100%);
+}
+
 body {
   margin: 0;
   font-family: 'VT323', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #7e38ce46;
+
+
 }
 
 code {
