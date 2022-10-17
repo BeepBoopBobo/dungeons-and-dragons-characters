@@ -9,8 +9,8 @@ const CharacterList: FC<{ data?: { id: number, name: string, class: string, leve
     return <div id='pc-list'>
         {
             props.data !== undefined && props.data.length !== 0 ? props.data.map(item =>
-                <Link to={`character/${item.id}`}>
-                    <div className="list-item" key={`char-${item.name}`}>
+                <Link key={`link-char-${item.name}`} to={`character/${item.id}`}>
+                    <div className="list-item">
                         <span className="pointer"><FaCaretRight /></span>
                         <div className="item">
                             <span className="pc-name">{item.name}</span>

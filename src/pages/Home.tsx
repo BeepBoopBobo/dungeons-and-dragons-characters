@@ -11,7 +11,8 @@ interface characterParam {
     name: string,
     class: string,
     level: number,
-    race: string
+    race: string,
+    attributes?: string[],
 }
 
 const Home = () => {
@@ -45,10 +46,12 @@ const Home = () => {
         //else picks the elements (that have the wished class) from original state of characters
         if (selectedClassFilter === className) {
             setSelectedClassFilter('');
-            setFilteredCharacters(allCharacters ? allCharacters.filter(item => (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
+            setFilteredCharacters(allCharacters ?
+                allCharacters.filter(item => (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
         } else {
             setSelectedClassFilter(className);
-            setFilteredCharacters(allCharacters ? allCharacters.filter(item => (item.class === className) && (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
+            setFilteredCharacters(allCharacters ?
+                allCharacters.filter(item => (item.class === className) && (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
         }
     }
 
@@ -82,12 +85,12 @@ const Home = () => {
                         <span className="class-select-text">{item.name}s</span>
                     </div>)}
         </div>
+
         {/* renders out a level filter */}
         <div id="character-level-filters">
             <label>
                 Min Level:
                 <input id="character-level-filter-min" placeholder="1" value={selectedLevelFilter[0]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
-
             </label>
             <label>
                 Max Level:
@@ -97,7 +100,6 @@ const Home = () => {
         </div>
 
         <h1>SELECT A CHARACTER:</h1>
-
         {/* renders list of (filtered) characters */}
         <CharacterList data={filteredCharacters} />
     </>
