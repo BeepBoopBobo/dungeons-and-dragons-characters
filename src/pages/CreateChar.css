@@ -1,0 +1,64 @@
+#point-buy-table {
+    width: 60%;
+    margin: auto;
+    font-size: 1.25rem;
+}
+
+#submit-button {
+    width: 80px;
+    height: 40px
+}
+
+/**/
+.selector {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+    justify-content: space-around;
+    row-gap: 16px;
+}
+
+.option {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 15%;
+    border-radius: 10px;
+    background-color: var(--whiteLow);
+}
+
+.option-img {
+    width: 80%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.option:hover {
+    border: 2px solid red;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.option-icon {
+    /* height: 80%; */
+}
+
+.option-desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--whiteHigh);
+}
+
+.selected {
+    background-color: var(--whiteHigh);
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+.properties {
+    color: var(--gray);
+}

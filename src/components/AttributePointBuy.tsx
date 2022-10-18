@@ -1,15 +1,39 @@
 import React, { FC } from 'react';
+import './AttributePointBuy.css';
 
 const AttributePointBuy: FC<{ att: string, value: number, raceModifier: any, increment: any, decrement: any }> = (props) => {
-    const raceMod = props.raceModifier ? props.raceModifier.value : 0;
+    const raceMod = props.raceModifier ? props.raceModifier : 0;
     const modifier = Math.floor((props.value + raceMod - 10) / 2);
 
-    return <div className='att-pb'>
-        {props.att}
-        <button onClick={props.decrement}>-</button> {props.value} <button onClick={props.increment}>+</button>
-        {'+' + raceMod} TOTAL: {raceMod + props.value}
-        <span className='att-modifier'> MOD: {modifier <= 0 ? modifier : '+' + modifier}</span>
-    </div>
+    return <tr className='pb-row'>
+        <td className='pb-cell pb-attribute'>
+            {props.att}
+        </td>
+
+        <td className='pb-cell'>
+            <button onClick={props.decrement} className='pb-button'>-</button>
+        </td>
+
+        <td className='pb-cell'>
+            {props.value}
+        </td>
+
+        <td className='pb-cell'>
+            <button onClick={props.increment} className='pb-button'>+</button>
+        </td>
+
+        <td className='pb-cell'>
+            {'+' + raceMod}
+        </td>
+
+        <td className='pb-cell'>
+            {raceMod + props.value}
+        </td>
+
+        <td className='pb-cell'>
+            <span className='att-modifier'>{modifier <= 0 ? modifier : '+' + modifier}</span>
+        </td>
+    </tr>
 }
 
 export default AttributePointBuy;

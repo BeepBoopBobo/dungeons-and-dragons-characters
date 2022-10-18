@@ -7,16 +7,16 @@ import './Home.css';
 const axios = require('axios');
 
 interface characterParam {
-    id: number,
+    id: number | string,
     name: string,
     class: string,
-    level: number,
+    level: number | string,
     race: string,
     attributes?: string[],
 }
 
 const Home = () => {
-    const [selectedClassFilter, setSelectedClassFilter] = useState<string>('');   //stores character class as a filter
+    const [selectedClassFilter, setSelectedClassFilter] = useState('');   //stores character class as a filter
     const [selectedLevelFilter, setSelectedLevelFilter] = useState([1, 20]);
 
     const [filteredCharacters, setFilteredCharacters] = useState<characterParam[]>();   //stores results of filtering
@@ -29,8 +29,9 @@ const Home = () => {
     //gets characters info from db and stores it into sessionstorage, 
     async function fetchCharacters() {
         try {
-            const response = await axios.get('https://dnd-vol-2-default-rtdb.europe-west1.firebasedatabase.app/characters.json');
-            const characters: { id: number, class: string, race: string, level: number, name: string }[] = response.data.map((item: {}) => { return item });
+            const response = await axios.get('https://dnd-vol-2-default-rtdb.europe-west1.firebasedatabase.app/characters.json')
+
+            const characters: { id: number | string, class: string, race: string, level: number | string, name: string }[] = Object.values(response.data).map((item: any) => { return item });
             sessionStorage.setItem('chars', JSON.stringify(characters));
             setAllCharacters(characters);
             setFilteredCharacters(characters);
@@ -49,7 +50,7 @@ const Home = () => {
             setFilteredCharacters(allCharacters ?
                 allCharacters.filter(item => (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
         } else {
-            setSelectedClassFilter(className);
+            setSelectedClassFilter(className.toLocaleLowerCase());
             setFilteredCharacters(allCharacters ?
                 allCharacters.filter(item => (item.class === className) && (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
         }
@@ -77,12 +78,12 @@ const Home = () => {
         <div id="character-class-filter">
             {/* renders out a class filter */}
             {classesDummyData.map(item =>
-                selectedClassFilter.includes(item.name) ?
-                    <div className="class-select" id="class-select-active" onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>
-                        <span className="class-select-text">{item.name}s</span>
+                selectedClassFilter.includes(item.id) ?
+                    <div className="class-select" id="class-select-active" onClick={() => handleClassPick(item.id)} key={`sel-${item.id}`}>
+                        <span className="class-select-text">{item.id.toLocaleUpperCase()}S</span>
                     </div>
-                    : <div className='class-select' onClick={() => handleClassPick(item.name)} key={`sel-${item.name}`}>
-                        <span className="class-select-text">{item.name}s</span>
+                    : <div className='class-select' onClick={() => handleClassPick(item.id)} key={`sel-${item.id}`}>
+                        <span className="class-select-text">{item.id.toLocaleUpperCase()}S</span>
                     </div>)}
         </div>
 

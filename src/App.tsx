@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, NavLink, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Character from './pages/Character';
-import { charDummyData } from './DummyData';
+// import { charactersDummyData } from './DummyData';
 import CreateChar from './pages/CreateChar';
 
 

@@ -4,6 +4,10 @@
   /* background: rgb(172, 172, 172); */
   background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(255, 95, 95, 1) 100%);
   background-attachment: fixed;
+  --whiteHigh: rgba(255, 255, 255, 0.8);
+  --whiteLow: rgba(255, 255, 255, 0.4);
+  --gray: #707070;
+  letter-spacing: 0.05rem;
 }
 
 html {

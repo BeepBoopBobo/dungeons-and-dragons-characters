@@ -4,7 +4,7 @@ import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const CharacterList: FC<{ data?: { id: number, name: string, class: string, level: number, race?: string }[] }> = (props) => {
+const CharacterList: FC<{ data?: { id: number | string, name: string, class: string, level: number | string, race?: string }[] }> = (props) => {
 
     return <div id='pc-list'>
         {
@@ -14,7 +14,7 @@ const CharacterList: FC<{ data?: { id: number, name: string, class: string, leve
                         <span className="pointer"><FaCaretRight /></span>
                         <div className="item">
                             <span className="pc-name">{item.name}</span>
-                            <span className="pc-props">{item.class}, lvl {item.level} </span>
+                            <span className="pc-props">{item.class}, lvl {typeof item.level === 'string' ? parseInt(item.level) : item.level} </span>
                         </div>
                         <span className="pointer"><FaCaretLeft /></span>
                     </div>
