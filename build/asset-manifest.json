@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dungeons-and-dragons-characters/static/css/main.773f848d.css",
-    "main.js": "/dungeons-and-dragons-characters/static/js/main.352b2c55.js",
+    "main.js": "/dungeons-and-dragons-characters/static/js/main.27a69b3e.js",
     "static/js/787.ef748355.chunk.js": "/dungeons-and-dragons-characters/static/js/787.ef748355.chunk.js",
     "static/media/druid.png": "/dungeons-and-dragons-characters/static/media/druid.d27afa6c13beec360f1f.png",
     "static/media/fighter.png": "/dungeons-and-dragons-characters/static/media/fighter.fd5811bae73eb5fe8737.png",
@@ -45,11 +45,11 @@
     "static/media/survival.png": "/dungeons-and-dragons-characters/static/media/survival.62d998c868d46581466c.png",
     "index.html": "/dungeons-and-dragons-characters/index.html",
     "main.773f848d.css.map": "/dungeons-and-dragons-characters/static/css/main.773f848d.css.map",
-    "main.352b2c55.js.map": "/dungeons-and-dragons-characters/static/js/main.352b2c55.js.map",
+    "main.27a69b3e.js.map": "/dungeons-and-dragons-characters/static/js/main.27a69b3e.js.map",
     "787.ef748355.chunk.js.map": "/dungeons-and-dragons-characters/static/js/787.ef748355.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.773f848d.css",
-    "static/js/main.352b2c55.js"
+    "static/js/main.27a69b3e.js"
   ]
 }
