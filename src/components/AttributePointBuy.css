@@ -1,12 +1,52 @@
 .pb-row {
-    width: 60%;
+    height: 60px;
 }
 
-.button-cell {
-    width: 10%;
+.pb-row:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+}
+
+.pb-row:hover td {
+    background-color: var(--whiteHigh);
+}
+
+.pb-row:last-child:hover td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+.pb-row:last-child:hover td:last-child {
+    border-radius: 0 0 10px 0;
+}
+
+.pb-cell {
+    width: auto;
+    height: 100%;
+
+}
+
+.pb-cell-buttons {
+    height: 100%;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .pb-button {
-    width: 50%;
-    height: auto;
+    aspect-ratio: 1/1;
+    height: 70%;
+    background-color: var(--whiteHigh);
+    border: 1px solid var(--gray);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.pb-button:hover {
+    background-color: var(--gray);
+    color: white;
+    border: 1px solid var(--whiteHigh);
+    box-sizing: border-box;
+
+
 }

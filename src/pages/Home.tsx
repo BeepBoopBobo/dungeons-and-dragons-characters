@@ -7,12 +7,72 @@ import './Home.css';
 const axios = require('axios');
 
 interface characterParam {
-    id: number | string,
+    attributes: {
+        name: string,
+        value: number
+    }[],
+    class: {
+        name: string,
+        id: string,
+        hitDieValue: number,
+        savingThrows: {
+            name: string,
+            value: boolean
+        }[],
+        classGeneralFeatures?: {
+            id: string,
+            name: string,
+            availableAtLevel: number,
+            description: string
+        }[],
+        caster?: {
+            canUseSpells: boolean,
+            atLevel: number,
+            cantrips: number,
+            firstLevelSpells: number,
+            secondLevlSpells: number,
+            thirdLevlSpells: number,
+            fourthLevlSpells: number,
+            fifthLevlSpells: number,
+            sixthLevlSpells: number,
+            seventhLevlSpells: number,
+            eightLevlSpells: number,
+            ninthLevlSpells: number,
+            knownSpells: number
+        }[]
+    },
+    currentHp: number,
+    deathSavesFails: number,
+    deathSavesSaves: number,
+    equipment: any,
+    id: string,
+    level: number,
+    maxHp: number,
     name: string,
-    class: string,
-    level: number | string,
-    race: string,
-    attributes?: string[],
+    proficiencies: { name: string }[]
+    race: {
+        name: string,
+        id: string,
+        speed: number,
+        attributesIncreased: {
+            name: string,
+            value: number
+        }[]
+    },
+
+    spells: {
+        id: string,
+        name: string,
+        level: number,
+        type: string,
+        time: string,
+        concentration: boolean,
+        duration: string,
+        numOfDice: number,
+        die: number,
+        description: string
+    }[],
+    temporalHp: number
 }
 
 const Home = () => {
@@ -31,7 +91,8 @@ const Home = () => {
         try {
             const response = await axios.get('https://dnd-vol-2-default-rtdb.europe-west1.firebasedatabase.app/characters.json')
 
-            const characters: { id: number | string, class: string, race: string, level: number | string, name: string }[] = Object.values(response.data).map((item: any) => { return item });
+            const characters: characterParam[] = Object.values(response.data).map((item: any) => { return item });
+
             sessionStorage.setItem('chars', JSON.stringify(characters));
             setAllCharacters(characters);
             setFilteredCharacters(characters);
@@ -52,7 +113,7 @@ const Home = () => {
         } else {
             setSelectedClassFilter(className.toLocaleLowerCase());
             setFilteredCharacters(allCharacters ?
-                allCharacters.filter(item => (item.class === className) && (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
+                allCharacters.filter(item => (item.class?.id === className) && (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1])) : []);
         }
     }
 
@@ -68,7 +129,7 @@ const Home = () => {
 
     const handleLevelSubmit = () => {
         selectedClassFilter ?
-            setFilteredCharacters(allCharacters ? allCharacters.filter(item => (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1]) && (item.class === selectedClassFilter)) : []) :
+            setFilteredCharacters(allCharacters ? allCharacters.filter(item => (item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1]) && (item.class?.id === selectedClassFilter)) : []) :
             setFilteredCharacters(allCharacters ? allCharacters.filter(item => item.level >= selectedLevelFilter[0] && item.level <= selectedLevelFilter[1]) : []);
 
     }
@@ -97,7 +158,7 @@ const Home = () => {
                 Max Level:
                 <input id="character-level-filter-max" placeholder="20" value={selectedLevelFilter[1]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
             </label>
-            <button id="character-level-button" onClick={handleLevelSubmit}>Show</button>
+            <button id="character-level-button" onClick={handleLevelSubmit}>FILTER</button>
         </div>
 
         <h1>SELECT A CHARACTER:</h1>

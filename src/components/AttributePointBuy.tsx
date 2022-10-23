@@ -6,12 +6,8 @@ const AttributePointBuy: FC<{ att: string, value: number, raceModifier: any, inc
     const modifier = Math.floor((props.value + raceMod - 10) / 2);
 
     return <tr className='pb-row'>
-        <td className='pb-cell pb-attribute'>
-            {props.att}
-        </td>
-
         <td className='pb-cell'>
-            <button onClick={props.decrement} className='pb-button'>-</button>
+            {props.att}
         </td>
 
         <td className='pb-cell'>
@@ -19,7 +15,11 @@ const AttributePointBuy: FC<{ att: string, value: number, raceModifier: any, inc
         </td>
 
         <td className='pb-cell'>
-            <button onClick={props.increment} className='pb-button'>+</button>
+            <div className='pb-cell-buttons'>
+                <button onClick={props.decrement} className='pb-button'>-</button>
+
+                <button onClick={props.increment} className='pb-button'>+</button>
+            </div>
         </td>
 
         <td className='pb-cell'>
@@ -33,7 +33,7 @@ const AttributePointBuy: FC<{ att: string, value: number, raceModifier: any, inc
         <td className='pb-cell'>
             <span className='att-modifier'>{modifier <= 0 ? modifier : '+' + modifier}</span>
         </td>
-    </tr>
+    </tr >
 }
 
 export default AttributePointBuy;

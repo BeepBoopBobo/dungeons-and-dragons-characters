@@ -71,3 +71,18 @@ a {
     background-color: rgba(255, 255, 255, 100%);
 
 }
+
+#no-match {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    #create-character-button-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--redish);
+        color: white;
+    }
+}

@@ -6,6 +6,7 @@
   background-attachment: fixed;
   --whiteHigh: rgba(255, 255, 255, 0.8);
   --whiteLow: rgba(255, 255, 255, 0.4);
+  --redish: #FF5F5F;
   --gray: #707070;
   letter-spacing: 0.05rem;
 }
@@ -20,6 +21,7 @@ body {
   font-family: 'VT323', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 80px;
 }
 
 code {

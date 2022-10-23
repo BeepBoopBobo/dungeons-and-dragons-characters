@@ -4,7 +4,36 @@ import { FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 
-const CharacterList: FC<{ data?: { id: number | string, name: string, class: string, level: number | string, race?: string }[] }> = (props) => {
+const CharacterList: FC<{
+    data?: {
+        id: number | string,
+        name: string,
+        level: number | string,
+        class: {
+            name: string,
+            id: string, hitDieValue: number,
+            savingThrows: {
+                name: string,
+                value: boolean
+            }[]
+        },
+        race: {
+            name: string,
+            id: string,
+            speed: number,
+            attributesIncreased: {
+                name: string,
+                value: number
+            }[]
+        },
+        attributes: {
+            name: string,
+            value: number
+        }[],
+        equipment: any,
+        proficiencies: { name: string }[]
+    }[]
+}> = (props) => {
 
     return <div id='pc-list'>
         {
@@ -14,12 +43,12 @@ const CharacterList: FC<{ data?: { id: number | string, name: string, class: str
                         <span className="pointer"><FaCaretRight /></span>
                         <div className="item">
                             <span className="pc-name">{item.name}</span>
-                            <span className="pc-props">{item.class}, lvl {typeof item.level === 'string' ? parseInt(item.level) : item.level} </span>
+                            <span className="pc-props">{item.class.id}, lvl {typeof item.level === 'string' ? parseInt(item.level) : item.level} </span>
                         </div>
                         <span className="pointer"><FaCaretLeft /></span>
                     </div>
                 </Link>
-            ) : <h3>No matches</h3>}
+            ) : <span id="no-match" >NO MATCHES</span>}
         <Link to={'create-character'}>
             <div id='create-character-button-container'>
                 <span className="pointer"><FaCaretRight /></span>

@@ -1,22 +1,63 @@
-#point-buy-table {
-    width: 60%;
+#creation-window {
+    width: 70%;
     margin: auto;
-    font-size: 1.25rem;
 }
 
-#submit-button {
-    width: 80px;
-    height: 40px
-}
 
-/**/
-.selector {
+
+#input-fields {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 200px;
     margin: auto;
-    justify-content: space-around;
-    row-gap: 16px;
+}
+
+.input-field {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.input-field>* {
+    width: 200px;
+}
+
+
+/*point buy table*/
+#point-buy-table {
+    width: 100%;
+    margin: auto;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    background-color: var(--whiteLow);
+    border-collapse: collapse;
+}
+
+#pb-header>* {
+    height: 40px;
+    background-color: var(--whiteHigh);
+}
+
+#pb-header th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+#pb-header th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+
+/*picking options with icons*/
+.selector {
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+.selector>* {
+    margin-top: 10px;
 }
 
 .option {
@@ -25,6 +66,29 @@
     width: 15%;
     border-radius: 10px;
     background-color: var(--whiteLow);
+}
+
+.proficiencies-op {
+    width: 14%;
+}
+
+.races-op {
+    min-width: 18%;
+}
+
+.weapons-op {
+    width: 14%;
+}
+
+.spell-option {
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--whiteLow);
+}
+
+.spell-desc {
+    font-size: 0.90rem;
+    color: var(--gray);
 }
 
 .option-img {
@@ -37,10 +101,6 @@
     border: 2px solid red;
     box-sizing: border-box;
     cursor: pointer;
-}
-
-.option-icon {
-    /* height: 80%; */
 }
 
 .option-desc {
@@ -61,4 +121,153 @@
 
 .properties {
     color: var(--gray);
+}
+
+
+
+/*
+    progress
+*/
+#buttons {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+}
+
+#prev-button {
+    position: absolute;
+    left: 0;
+}
+
+#next-button,
+#submit-button {
+    position: absolute;
+    right: 0;
+}
+
+.progress-button {
+    font-size: 1.2rem;
+    background-color: var(--whiteHigh);
+    box-sizing: content-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* font-weight: bold; */
+}
+
+.progress-button:hover {
+    background-color: var(--redish);
+    color: white;
+    border: 2px solid red;
+    box-sizing: border-box;
+    box-shadow: 0 5px 5px gray;
+}
+
+
+/*
+    progress bar
+*/
+
+#progress-bar {
+    width: 100%;
+    height: 25px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    gap: 0;
+}
+
+#progress-bar:hover {
+    gap: 5px;
+    transition: 0.2s;
+
+}
+
+.bar {
+    background-color: var(--whiteLow);
+    flex: 1;
+    height: 100%;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+.full {
+    background-color: var(--whiteHigh);
+
+}
+
+
+.sum-up-info {
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1500px) {
+    #creation-window {
+        width: 90%;
+    }
+
+    .option {
+        width: 20%;
+    }
+
+    .races-op {
+        width: 15%;
+    }
+
+    .proficiencies-op {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #creation-window {
+        width: 100%;
+    }
+
+    .option {
+        width: 40%;
+    }
+
+    #buttons {
+        width: 100%;
+        height: 50px;
+        position: fixed;
+        bottom: 0;
+        background-color: transparent;
+
+    }
+
+    .progress-button {
+        background-color: var(--redish);
+        position: inherit;
+        height: 50px;
+        width: 49%;
+        border: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        border: none;
+        padding: 0;
+    }
+
+    #pb-header {
+        font-size: 1rem;
+    }
+
+    .pb-button {
+        width: 100%;
+        height: 30px;
+        padding: 0;
+    }
+
+    #point-buy-table {
+        border-radius: 0;
+    }
+
+    #pb-header th:first-child,
+    #pb-header th:last-child {
+        border-radius: 0;
+    }
+
 }

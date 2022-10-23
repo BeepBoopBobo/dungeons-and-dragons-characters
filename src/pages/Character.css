@@ -1,0 +1,268 @@
+/*
+GENERAL
+*/
+#charsheet {
+    width: 80%;
+    margin: auto;
+}
+
+#charsheet>* {
+    margin-top: 40px;
+}
+
+#charsheet-columns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: var(--whiteLow);
+    border-radius: 10px;
+    width: 100%;
+
+}
+
+.standart {
+    height: 160px;
+    display: flex;
+    position: relative;
+}
+
+
+.square {
+    height: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background-color: var(--whiteHigh);
+    border-radius: 10px;
+    display: flex;
+}
+
+.small {
+    width: 30%;
+}
+
+.mid {
+    width: 45%;
+}
+
+.content {
+    margin: auto;
+}
+
+.auto {
+    height: auto;
+}
+
+/*
+HEADER
+*/
+#charseet-header {
+    display: block;
+    width: 40%;
+    height: 200px;
+    text-align: left;
+    display: flex;
+}
+
+#charseet-header>* {
+    padding: 20px;
+    margin: 0;
+}
+
+#header-props {
+    width: 100%;
+}
+
+#header-props h1,
+#header-props h2 {
+    width: 80%;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#image-container {
+    height: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    aspect-ratio: 1/1;
+    padding: 0;
+}
+
+#character-image {
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+/*
+COLUMNS
+*/
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column>:not(:first-child) {
+    margin-top: 20px;
+}
+
+
+.column {
+    position: relative;
+    width: 30%;
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--whiteHigh);
+    padding: 5px;
+    border-radius: 10px 10px 0 0;
+}
+
+/*
+FIRST COLUMN
+*/
+.attribute-content {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px
+}
+
+.big-modifier {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 4rem;
+    width: 100%;
+}
+
+/*
+SECOND COLUMN
+*/
+
+.weapons {
+    width: 100%;
+}
+
+
+/*
+THIRD COLUMN
+*/
+.class-feature {
+    background-color: var(--whiteLow);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.class-feature:first-of-type {
+    margin-top: 40px;
+}
+
+.class-feature-name {
+    letter-spacing: 0.1rem;
+    font-size: 1.2rem;
+    background-color: var(--whiteHigh);
+}
+
+.class-feature-description {
+    font-size: 0.95rem;
+    width: 90%;
+    margin: auto;
+}
+
+.text-description {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#death-saves {
+    font-size: 1.2rem;
+    width: 100%;
+}
+
+#weapons-table {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.hidden {
+    visibility: collapse;
+    height: 0;
+}
+
+#third-col .title {
+    margin: 0;
+}
+
+.death-saves-row {
+    width: 100%;
+    background-color: var(--whiteHigh);
+}
+
+.death-saves-points {
+    width: 100%;
+
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+}
+
+/*
+TABLE
+*/
+#table-header {
+    background-color: var(--whiteHigh);
+}
+
+@media screen and (max-width: 1500px) {
+    #charsheet {
+        width: 90%;
+    }
+
+    #charseet-header {
+        width: 80%;
+    }
+
+    #charsheet-columns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .column {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    #charsheet {
+        width: 90%;
+    }
+
+    #charseet-header {
+        width: 100%;
+    }
+
+    #charsheet-columns {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .column {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .class-feature-name {
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
