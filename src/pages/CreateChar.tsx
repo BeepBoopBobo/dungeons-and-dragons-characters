@@ -169,8 +169,6 @@ const CreateChar = () => {
 
     const handleSpellSelect = (spell: string, spellLevel: number) => {
         let slotsTempArr = [...charSpellsSlotsTaken];
-        console.log('all slots', charSpellsSlotsTaken);
-        console.log('all spells', charSpells)
 
         const assignSpells = () => {
             //checks if character already has the spell in charSpells
@@ -265,7 +263,7 @@ const CreateChar = () => {
 
         return <div className="selector" id={`${type}-selector`}>
             {dummyData.map(item =>
-                <div className={
+                <div key={item.name} className={
                     (charProficiencies.includes(item.id)) ? `${type}-op option selected` :
                         charClass === (item.id) ? `${type}-op option selected` :
                             charRace === (item.id) ? `${type}-op option selected` : `${type}-op option`}
@@ -300,15 +298,15 @@ const CreateChar = () => {
         return <div className="selector" id={`${type}-selector`}>
             {dummyData.map(item =>
                 item.id === 'shield' && type === 'armor' ? null :
-                    <div className={charEquipment[index] === (item.id) ? `${type}-op option selected` : `${type}-op option`} onClick={() => handleEquipmentSelect(item.id, index)}>
+                    <div key={item.name} className={charEquipment[index] === (item.id) ? `${type}-op option selected` : `${type}-op option`} onClick={() => handleEquipmentSelect(item.id, index)}>
                         <div className="option-icon">
-                            -prof icon-
+                            <img alt={'Option for ' + item.name} src={require(`../images/wip.png`)} className='option-img' />
                         </div>
                         <div className="option-desc">
                             {item.name.toLocaleUpperCase()}<br />
                             <span className="properties">
-                                {item.die ? item.numOfDice + 'd' + item.die + ' ' + item.typeOfDamage + ', ' : null}
-                                {item.dexMod ? 'AC: ' + item.armorClass + ' +[DEX]' : 'AC: ' + item.armorClass}
+                                {type === 'armor' ? item.dexMod ? 'AC: ' + item.armorClass + ' +[DEX]' : 'AC: ' + item.armorClass :
+                                    item.die ? item.numOfDice + 'd' + item.die + ' ' + item.typeOfDamage : null}
                             </span>
                         </div>
                     </div>)}
@@ -360,10 +358,11 @@ const CreateChar = () => {
             <div className="selector" id={'spells-selector'} >
                 {dummyData.map(item =>
                     item.level === spellLevel ?
-                        <div className={charSpells.find(element => element === item.id) ? "spell-option selected" : "spell-option"} onClick={() => handleSpellSelect(item.id, item.level)}>
+                        <div key={item.name} className={charSpells.find(element => element === item.id) ? "spell-option selected" : "spell-option"} onClick={() => handleSpellSelect(item.id, item.level)}>
 
                             <div className="spell-header">
-                                {item.name}, {item.level === 0 ? 'Cantrip' : item.level + 'th level'}, {item.time}, duration: {item.duration}
+                                {item.name.toLocaleUpperCase()}<br />
+                                [{item.level === 0 ? 'Cantrip' : item.level + 'th level'}, {item.time}]
                             </div>
 
                             <div className="spell-desc">

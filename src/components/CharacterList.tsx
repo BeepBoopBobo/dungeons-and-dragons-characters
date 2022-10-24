@@ -48,7 +48,7 @@ const CharacterList: FC<{
                         <span className="pointer"><FaCaretLeft /></span>
                     </div>
                 </Link>
-            ) : <span id="no-match" >NO MATCHES</span>}
+            ) : <div id="no-match" >NO MATCHES</div>}
         <Link to={'create-character'}>
             <div id='create-character-button-container'>
                 <span className="pointer"><FaCaretRight /></span>

@@ -80,12 +80,17 @@ h1 {
 
 #character-level-filters {
     display: flex;
+    width: 300px;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
     gap: 20px;
 }
 
 #character-level-filter-min,
-#character-level-filter-max {}
+#character-level-filter-max {
+    width: 100%;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -95,6 +100,25 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+#character-level-button {
+    font-size: 1.2rem;
+    width: 50%;
+    background-color: var(--whiteHigh);
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#character-level-button:hover {
+    background-color: var(--redish);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid red;
+    box-shadow: 0 5px 5px gray;
 }
 
 @media screen and (max-width: 1500px) {
@@ -131,15 +155,29 @@ input[type=number] {
         height: fit-content;
     }
 
+    #character-level-filter-min,
+    #character-level-filter-max {
+        /* padding: 10px 0; */
+        line-height: 2rem;
+        width: 40%;
+    }
 
     .class-select {
         width: 20%;
         padding: 2.5%;
+        transition: none;
+
     }
 
     #class-select-active {
         height: 30px;
         border-radius: 0;
+    }
+
+    .class-select:hover {
+        background-color: var(--whiteHigh);
+        border-radius: 0;
+        height: 30px;
     }
 
     h1 {
@@ -174,6 +212,5 @@ input[type=number] {
         font-size: 1.2rem;
         height: 50px;
     }
-
 
 }

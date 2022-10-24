@@ -59,20 +59,13 @@ a {
     width: 50%;
 }
 
-#character-level-button {
-    background-color: rgba(255, 255, 255, 80%);
-    padding: 5px 20px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
+#level-filters {
+    width: 100%;
 }
 
-#character-level-button:hover {
-    background-color: rgba(255, 255, 255, 100%);
-
-}
 
 #no-match {
+    padding: 20px;
     font-size: 2rem;
 }
 

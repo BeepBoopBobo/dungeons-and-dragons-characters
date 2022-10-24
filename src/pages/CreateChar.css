@@ -82,6 +82,7 @@
 
 .spell-option {
     width: 100%;
+    padding: 10px 0;
     border-radius: 10px;
     background-color: var(--whiteLow);
 }
@@ -267,6 +268,10 @@
 
     #pb-header th:first-child,
     #pb-header th:last-child {
+        border-radius: 0;
+    }
+
+    .spell-option {
         border-radius: 0;
     }
 

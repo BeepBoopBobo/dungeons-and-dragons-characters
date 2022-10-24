@@ -124,7 +124,6 @@ const Home = () => {
         if (selectedLevelFilter[0] > selectedLevelFilter[1]) {
             setSelectedLevelFilter([selectedLevelFilter[1], selectedLevelFilter[1]]);
         }
-        console.log(selectedLevelFilter);
     }
 
     const handleLevelSubmit = () => {
@@ -150,6 +149,7 @@ const Home = () => {
 
         {/* renders out a level filter */}
         <div id="character-level-filters">
+
             <label>
                 Min Level:
                 <input id="character-level-filter-min" placeholder="1" value={selectedLevelFilter[0]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
@@ -158,6 +158,7 @@ const Home = () => {
                 Max Level:
                 <input id="character-level-filter-max" placeholder="20" value={selectedLevelFilter[1]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
             </label>
+
             <button id="character-level-button" onClick={handleLevelSubmit}>FILTER</button>
         </div>
 

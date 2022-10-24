@@ -171,6 +171,7 @@ THIRD COLUMN
     letter-spacing: 0.1rem;
     font-size: 1.2rem;
     background-color: var(--whiteHigh);
+    cursor: pointer;
 }
 
 .class-feature-description {
