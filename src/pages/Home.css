@@ -41,7 +41,6 @@ h1 {
     justify-content: space-around;
     font-size: 1.3rem;
     gap: 20px;
-    margin-bottom: 20px;
 }
 
 #character-level-filter {
@@ -87,10 +86,6 @@ h1 {
     gap: 20px;
 }
 
-#character-level-filter-min,
-#character-level-filter-max {
-    width: 100%;
-}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -119,6 +114,29 @@ input[type=number] {
     padding: 10px 20px;
     border: 2px solid red;
     box-shadow: 0 5px 5px gray;
+}
+
+.filter-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.filter-inputs>label {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    width: 40%;
+}
+
+#character-level-filter-min,
+#character-level-filter-max {
+    width: 100%;
+    background-color: var(--whiteLow);
+    border: none;
+    padding: 5px 0px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 @media screen and (max-width: 1500px) {
@@ -159,7 +177,6 @@ input[type=number] {
     #character-level-filter-max {
         /* padding: 10px 0; */
         line-height: 2rem;
-        width: 40%;
     }
 
     .class-select {

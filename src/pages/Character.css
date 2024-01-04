@@ -55,6 +55,13 @@ GENERAL
     height: auto;
 }
 
+#home-btn {
+    position: absolute;
+    top: 40px;
+    right: 10%;
+    z-index: 10;
+}
+
 /*
 HEADER
 */
@@ -265,5 +272,13 @@ TABLE
     .class-feature-name {
         height: 40px;
         font-size: 1.5rem;
+    }
+
+    #home-btn {
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
     }
 }

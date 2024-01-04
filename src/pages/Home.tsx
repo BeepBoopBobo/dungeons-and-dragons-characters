@@ -149,15 +149,17 @@ const Home = () => {
 
         {/* renders out a level filter */}
         <div id="character-level-filters">
+            <div className="filter-inputs">
 
-            <label>
-                Min Level:
-                <input id="character-level-filter-min" placeholder="1" value={selectedLevelFilter[0]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
-            </label>
-            <label>
-                Max Level:
-                <input id="character-level-filter-max" placeholder="20" value={selectedLevelFilter[1]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
-            </label>
+                <label>
+                    Min Level:
+                    <input id="character-level-filter-min" placeholder="1" value={selectedLevelFilter[0]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
+                </label>
+                <label>
+                    Max Level:
+                    <input id="character-level-filter-max" placeholder="20" value={selectedLevelFilter[1]} type='number' min='1' max='20' onChange={handleLevelChange}></input>
+                </label>
+            </div>
 
             <button id="character-level-button" onClick={handleLevelSubmit}>FILTER</button>
         </div>

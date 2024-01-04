@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AttributePointBuy from "../components/AttributePointBuy";
 import { attributesDummyData, classesDummyData, racesDummyData, proficienciesDummyData, armorDummyData, weaponsMeleeDummyData, weaponsRangedDummyData, spellsDummyData } from "../DummyData";
 import './CreateChar.css';
+import { Link } from "react-router-dom";
 
 const axios = require('axios').default;
 
@@ -543,6 +544,17 @@ const CreateChar = () => {
 
             <div id="buttons">
                 {
+                    creationProgress === 0 ?
+                        <Link to={'/'}>
+                            <button
+                                className="progress-button"
+                                id="back-button"
+                            >
+                                BACK
+                            </button>
+                        </Link> : null
+                }
+                {
                     creationProgress > 0 ?
                         <button
                             className="progress-button"
@@ -565,7 +577,8 @@ const CreateChar = () => {
                             id="submit-button"
                             onClick={() => { handleSubmit() }}>
                             SUBMIT
-                        </button> : null}
+                        </button> : null
+                }
             </div>
         </div>
 

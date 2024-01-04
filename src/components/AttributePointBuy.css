@@ -40,6 +40,7 @@
     border: 1px solid var(--gray);
     box-sizing: border-box;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .pb-button:hover {
@@ -47,6 +48,4 @@
     color: white;
     border: 1px solid var(--whiteHigh);
     box-sizing: border-box;
-
-
 }

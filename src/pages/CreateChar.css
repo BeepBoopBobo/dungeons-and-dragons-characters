@@ -136,7 +136,8 @@
     position: relative;
 }
 
-#prev-button {
+#prev-button,
+#back-button {
     position: absolute;
     left: 0;
 }
@@ -242,6 +243,7 @@
 
     .progress-button {
         background-color: var(--redish);
+        color: var(--whiteHigh);
         position: inherit;
         height: 50px;
         width: 49%;

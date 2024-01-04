@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { proficienciesDummyData } from "../DummyData";
 import './Character.css';
 interface characterParam {
@@ -232,7 +232,11 @@ const Character = () => {
     }
 
     return <div id="charsheet">
-
+        <Link to={'/'}>
+            <button className="progress-button" id="home-btn">
+                BACK
+            </button>
+        </Link>
         <div id="charseet-header" className="container standart  ">
             <div id='image-container'>
                 <img id="character-image" src={requestImage()} alt='Character avatar' />
