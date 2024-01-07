@@ -4,22 +4,29 @@
 }
 
 
-
 #input-fields {
     display: flex;
     flex-wrap: wrap;
-    width: 200px;
-    margin: auto;
+    justify-content: space-around;
 }
 
-.input-field {
-    margin-top: 10px;
+.input-fields>label {
+    text-transform: uppercase;
+    font-size: 1.3rem;
     width: 100%;
 }
 
-.input-field>* {
-    width: 200px;
+
+.input-field {
+    width: 100%;
+    background-color: var(--whiteLow);
+    border: none;
+    padding: 5px 0px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-align: center;
 }
+
 
 
 /*point buy table*/
@@ -224,6 +231,10 @@
 }
 
 @media screen and (max-width: 900px) {
+    .input-fields>label {
+        margin-top: 10px;
+    }
+
     #creation-window {
         width: 100%;
     }

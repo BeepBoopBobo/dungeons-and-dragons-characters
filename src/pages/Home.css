@@ -165,6 +165,10 @@ input[type=number] {
 }
 
 @media screen and (max-width: 900px) {
+    .filter-inputs {
+        margin-top: 20px;
+    }
+
     #character-class-filter {
         width: 100%;
         justify-content: stretch;

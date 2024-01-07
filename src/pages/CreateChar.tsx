@@ -456,15 +456,17 @@ const CreateChar = () => {
             {creationProgress === 0 ? <>
                 <h2>Enter name and level of the character:</h2>
                 <div id="input-fields">
-                    <label className="input-field">
+                    <label >
                         Name: <input
+                            className="input-field"
                             type='text'
                             placeholder="Enter character name"
                             defaultValue={charName !== '' ? charName : ''}
                             onChange={e => handleInputChange('name', e)}></input>
                     </label>
-                    <label className="input-field">
+                    <label >
                         Level: <input
+                            className="input-field"
                             type='number'
                             min='1'
                             max='20'
